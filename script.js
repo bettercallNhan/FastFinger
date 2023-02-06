@@ -1,4 +1,5 @@
-let words = ['savage','boomin','future','lamar','bobby','keems','gunna','choppa','kayne','rocky','joseph','jonathan'];
+let words = ['savage','boomin','future','lamar','bobby','keems','gunna','choppa','kayne','rocky','joseph','jonathan',
+            'bearer','ashen','chosen','cinder','manus','doodoo','gwynm'];
 let random = Math.floor(Math.random()* words.length);
 let tungu = document.getElementById("Randomword");
 let input = document.getElementById("inputWord");
