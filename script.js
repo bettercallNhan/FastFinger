@@ -1,4 +1,4 @@
-let words = ['savage','boomin','future','lamar','bobby','keems','gunna','choppa','kayne','rocky'];
+let words = ['savage','boomin','future','lamar','bobby','keems','gunna','choppa','kayne','rocky','joseph','jonathan'];
 let random = Math.floor(Math.random()* words.length);
 let tungu = document.getElementById("Randomword");
 let input = document.getElementById("inputWord");
@@ -16,7 +16,7 @@ tungu.innerHTML=Randomword;
 /// ham gan diem = 0 khi het thoi gian
 function pointagain(){
     point = 0 ;
-    time = 10
+    time = 10 ;
     again();
 }
 // ham de nhan vao cai input minh nhap 
@@ -27,7 +27,7 @@ input.addEventListener("keyup", ({key}) => {
             if(point<=0){
                 point = 0 ;
             }
-            again();
+            decreasepoin();
         }
         else{
             point++ ;
@@ -42,6 +42,13 @@ function again(){  // /// ham de chay lai game khi co su thay doi ve diem
     Randomword = words[Math.floor(Math.random()* words.length)];
     tungu.innerHTML = Randomword;       
 }
+// ham y chang again nhma bi tru diem ko dung cham toi timer
+function decreasepoin(){
+    input.value ="";
+    score.innerHTML = "Score: " + point;
+    Randomword = words[Math.floor(Math.random()* words.length)];
+    tungu.innerHTML = Randomword;       
+}
 
 
 // 3. Có countdown thời gian
@@ -50,7 +57,7 @@ let countdown = setInterval(countTime,1000);
 function countTime(){
     timecount.innerHTML = "Timer : " + time; //nhan time cua html ???
     time--;
-    if(time==0){ /// neu time toi 0 thi diem ve 0
+    if(time===0){ /// neu time toi 0 thi diem ve 0
         pointagain();
     }
 
