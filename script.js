@@ -25,7 +25,7 @@ input.addEventListener("keyup", ({key}) => {
     if (key === "Enter") {
         if (input.value !== Randomword){
             point--;
-            if(point<=0){
+            if(point==0){
                 point = 0 ;
                 alert("Ban da thua");
             }
@@ -68,7 +68,7 @@ function countTime(){
     timecount.innerHTML = "Timer : " + time; //nhan time cua html ???
     time--;
     if(time <= -2){ /// neu time toi 0 thi diem ve 0
-        alert("HET THOI GIAN !!");
+        alert(`HET THOI GIAN !! diem cua ban la: ${point} `);
         pointagain();
     }
 
