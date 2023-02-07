@@ -64,7 +64,7 @@ function countTime(){
 
 }
 
-//4. Restart khi hết thời gian 
+
 
 
 
