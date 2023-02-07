@@ -1,5 +1,5 @@
 let words = ['savage','boomin','future','lamar','bobby','keems','gunna','choppa','kayne','rocky','joseph','jonathan',
-            'bearer','ashen','chosen','cinder','manus','doodoo','gwynm'];
+            'bearer','ashen','chosen','cinder','manus','doodoo','gwynevere'];
 let random = Math.floor(Math.random()* words.length);
 let tungu = document.getElementById("Randomword");
 let input = document.getElementById("inputWord");
@@ -27,12 +27,21 @@ input.addEventListener("keyup", ({key}) => {
             point--;
             if(point<=0){
                 point = 0 ;
+                alert("Ban da thua");
             }
+            alert("Ban da sai");
             decreasepoin();
         }
         else{
             point++ ;
             again();
+            alert("Ban da dung");
+            if(point == 5){
+                alert(`Ban thang roi :), diem cua ban la: ${point}` );
+                point = 0;
+                again();
+            }
+
         }
     }
 });
@@ -58,7 +67,8 @@ let countdown = setInterval(countTime,1000);
 function countTime(){
     timecount.innerHTML = "Timer : " + time; //nhan time cua html ???
     time--;
-    if(time===0){ /// neu time toi 0 thi diem ve 0
+    if(time <= -2){ /// neu time toi 0 thi diem ve 0
+        alert("HET THOI GIAN !!");
         pointagain();
     }
 
